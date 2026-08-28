@@ -17,5 +17,5 @@ Spawn is a simple and customizable Spigot Minecraft plugin for setting a spawn t
 
 > The permissions inside of the plugin
 
-> ![NOTE]
-> A permissions plugin such as [LuckPerms]("https://luckperms.net/") is recommendend
+> [!NOTE]
+> A permissions plugin such as [LuckPerms](https://luckperms.net/) is recommendend
