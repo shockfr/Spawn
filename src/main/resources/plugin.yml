@@ -1,0 +1,24 @@
+name: Spawn
+version: $version
+main: com.shock.spawn.main
+api-version: '1.21'
+author: Shockfr
+
+commands:
+  setspawn:
+    permission: spawn.setspawn
+    description: Command to set the spawn
+  spawn:
+    permission: spawn.tp
+    description: Command to tp to the spawn
+
+permissions:
+  spawn.admin:
+    default: op
+    description: Permission for reloading spawn\'s config
+  spawn.setspawn:
+    default: op
+    description: Permission to set the spawn
+  spawn.tp:
+    default: true
+    description: Permission to tp to the spawn

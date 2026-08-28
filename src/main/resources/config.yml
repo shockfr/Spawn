@@ -1,0 +1,42 @@
+#Config version info
+#DO NOT MODIFY
+version: 1
+
+settings:
+  #Teleport the players to spawn on join
+  join-tp: false
+  #Teleport the players to spawn on respawn
+  respawn-tp: true
+
+  #Teleport delay (Time that is counted down until tp) in seconds
+  delay: 3
+
+messages:
+  #Message for a command sender not being a player
+  non-player: "&cThis command can only be ran by players"
+  #Message for spawn not being set
+  no-spawn: "&cSpawn is not set"
+  #Message for setting a spawn
+  set-spawn: "&aSpawn has been set to your location"
+  #Message for teleport cancel
+  tp-cancel: "&cTeleport canceled due to movement"
+  #Message for successfully teleporting to spawn
+  teleport: "&aTeleported to spawn"
+  #Message for while teleporting ({time} is time until teleport)
+  teleporting: "&aTeleporting to spawn in {time}"
+  #Message for reloading the config
+  reload: "&aSuccessfully reloaded the config"
+  #Message for teleporting another player to spawn ({player} is player)
+  tp-other: "&aTeleported {player} to spawn"
+  #Message for the player not existing when teleporting a player to spawn
+  tp-other-fail: "&cPlayer {player} does not exist"
+
+sounds:
+  #Sound played when spawn is set
+  set-spawn: "block.note_block.bell"
+  #Sound played while teleporting
+  teleporting: "block.note_block.bit"
+  #Sound played when teleported
+  teleport: "entity.enderman.teleport"
+  #Sound played on teleport cancel or invalid player
+  fail: "block.note_block.didgeridoo"
