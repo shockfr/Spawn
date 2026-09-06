@@ -1,26 +1,37 @@
 package com.shock.spawn;
 
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public final class events implements Listener {
-    private final FileConfiguration file = YamlConfiguration.loadConfiguration(utils.spawnFile());
-
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        if(file.getBoolean("settings.join-tp")) {
-            utils.teleport(event.getPlayer());
+        if(main.getInstance().getConfig().getBoolean("settings.join-tp")) {
+            utils.send("e", event.getPlayer());
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    utils.teleport(event.getPlayer());
+                    cancel();
+                }
+            }.runTaskTimer(main.getInstance(), 1L, 0L);
         }
     }
 
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event) {
-        if(file.getBoolean("settings.respawn-tp")) {
-            utils.teleport(event.getPlayer());
+        if(main.getInstance().getConfig().getBoolean("settings.respawn-tp")) {
+            utils.send("e", event.getPlayer());
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    utils.teleport(event.getPlayer());
+                    cancel();
+                }
+            }.runTaskTimer(main.getInstance(), 1L, 0L);
         }
     }
 }
